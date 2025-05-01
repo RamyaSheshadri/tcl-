@@ -63,7 +63,7 @@ foreach mod $mods {
 #### Close the file
 close $fp
 
-#### Print success msg
+#### Print result
 puts "Report saved as: $report_name"
 
 # 3.Module Area Summary (TCL only, tool-style)
@@ -131,6 +131,39 @@ decoder    : Power =  1.36 W → Medium
 mux        : Power =  2.22 W → High
 register   : Power =  1.01 W → Medium
 memory     : Power =  0.17 W → Low
+
+# 5.Voltage source names
+set lines [list VDD1 VDD2 VDD3 VDD4 VDD5]
+
+puts "Voltage Monitor Report"
+puts "------------------------"
+
+foreach line $lines {
+#### Generate random voltage between 0.5V and 1.5V
+    set voltage [expr rand() + 0.5]
+
+#### Decide status
+    if {$voltage < 0.9} {
+        set status "Under-voltage ⚠️"
+    } elseif {$voltage <= 1.2} {
+        set status "Normal ✅"
+    } else {
+        set status "Over-voltage 🔥"
+    }
+
+#### Print result
+    puts [format "%-5s : %.3f V → %s" $line $voltage $status]
+}
+
+Output:
+Voltage Monitor Report
+------------------------
+VDD1  : 0.812 V → Under-voltage ⚠️
+VDD2  : 1.153 V → Normal ✅
+VDD3  : 1.391 V → Over-voltage 🔥
+VDD4  : 1.008 V → Normal ✅
+VDD5  : 0.743 V → Under-voltage ⚠️
+
 
 
 
