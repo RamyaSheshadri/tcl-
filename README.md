@@ -151,14 +151,13 @@ This script designed to simulate and generate power consumption reports for vari
 The script is useful for system designers, embedded engineers, and hardware architects to assess and categorize the power usage of different components in a system design.
 
 **Purpose & Importance**
-This script is widely applicable in the following areas:
-**Power Analysis in Hardware Design**: For engineers working with embedded systems, this script simulates power consumption for different hardware modules like ALUs, decoders, multiplexers, etc. It helps in evaluating the power efficiency of each module, which is crucial in designs where power optimization is important, such as low-power devices, IoT systems, and portable electronics.
+* **Power Analysis in Hardware Design**:In embedded systems,simulates power consumption for different hardware modules like ALUs, decoders, multiplexers, etc. It helps in evaluating the power efficiency of each module, which is crucial in designs where power optimization is important, such as low-power devices, IoT systems, and portable electronics.
 
-**Power Estimation in Simulation:** During hardware simulations, it can be useful for generating random power values to check how various power consumption levels affect overall system performance. This is especially important when power usage is a factor in simulations for mobile devices, FPGAs, and ASICs.
+* **Power Estimation in Simulation:** During hardware simulations, it can be useful for generating random power values to check how various power consumption levels affect overall system performance. This is especially important when power usage is a factor in simulations for mobile devices, FPGAs, and ASICs.
 
-**System Optimization:** The categorization of modules based on power consumption (Low, Medium, High) helps designers identify modules that are consuming excessive power. This can guide optimizations like scaling back power-hungry components or optimizing power states.
+* **System Optimization:** The categorization of modules based on power consumption (Low, Medium, High) helps designers identify modules that are consuming excessive power. This can guide optimizations like scaling back power-hungry components or optimizing power states.
 
-**Report Generation:** This script produces clear, formatted reports that make it easy to visualize and analyze power usage, helping with documentation, project tracking, and design reviews.
+* **Report Generation:** This script produces clear, formatted reports that make it easy to visualize and analyze power usage, helping with documentation, project tracking, and design reviews.
 
 #### List of modules
 set modules [list alu decoder mux register memory]
