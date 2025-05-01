@@ -1,5 +1,5 @@
 # tcl-
-## 1.A mini script to simulate checking timing for multiple modules
+# 1.A mini script to simulate checking timing for multiple modules
 
 set modules [list alu control datapath uart]
 
@@ -95,7 +95,43 @@ foreach mod $modules {
 #### Print result
     puts [format "%-10s : Area = %4d units → Size: %s" $mod $area $tag]
 }
-qq
+
+# 4.Power Report Generator
+#### List of modules
+set modules [list alu decoder mux register memory]
+
+#### Print report header
+puts "Module Power Report"
+puts "--------------------"
+
+#### Loop through each module
+foreach mod $modules {
+#### Generate random power between 0.05 and 2.5
+    set power [expr rand() * 2.45 + 0.05]
+
+#### Categorize power level
+    if {$power < 0.5} {
+        set level "Low"
+    } elseif {$power < 1.5} {
+        set level "Medium"
+    } else {
+        set level "High"
+    }
+
+#### Print formatted result
+    puts [format "%-10s : Power = %4.2f W → %s" $mod $power $level]
+}
+
+
+#### Sample Output:
+#### Module Power Report
+--------------------
+alu        : Power =  0.42 W → Low
+decoder    : Power =  1.36 W → Medium
+mux        : Power =  2.22 W → High
+register   : Power =  1.01 W → Medium
+memory     : Power =  0.17 W → Low
+
 
 
 
