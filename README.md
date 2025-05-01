@@ -165,6 +165,23 @@ VDD4  : 1.008 V → Normal <br>
 VDD5  : 0.743 V → Under-voltage <br> 
 
 
+# 6.Log Parser Script
+## GOAL:
+Read a .rpt file, look for specific words (like “VIOLATED”) and print those lines.
+💻 Script:
+set log "timing_report.txt"  👉 Sets the filename to a variable
+set fp [open $log r]		👉 Opens the file in read mode
+set lines [split [read $fp] "\n"]👉 Reads the file content, splits it line-by-line into a list
+close $fp  👉 Closes the file — good practice always
+puts "Violations Found:"👉 Prints a header to make output clean
+foreach line $lines {
+    if {[string match *VIOLATED* $line]} {
+        puts $line
+    }
+}
+ 👉 Loops through each line
+ 👉 If the line contains the word “VIOLATED” → print it!
+#### Used in: PrimeTime, DC, Questa logs
 
 
 
