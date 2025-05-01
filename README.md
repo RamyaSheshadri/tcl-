@@ -50,7 +50,8 @@ set mods [list alu fifo uart]
 
 #### Write dummy slack values
 foreach mod $mods {
-    set slack [expr rand() * 0.3 - 0.1]  ;# Random slack between -0.1 and +0.2
+    set slack [expr rand() * 0.3 - 0.1]  ;
+#### Random slack between -0.1 and +0.2
     if {[expr $slack < 0]} {
         set status "VIOLATED"
     } else {
