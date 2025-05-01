@@ -126,11 +126,11 @@ foreach mod $modules {
 #### Sample Output:
 #### Module Power Report
 --------------------
-alu        : Power =  0.42 W → Low
-decoder    : Power =  1.36 W → Medium
-mux        : Power =  2.22 W → High
-register   : Power =  1.01 W → Medium
-memory     : Power =  0.17 W → Low
+alu        : Power =  0.42 W → Low  <br> 
+decoder    : Power =  1.36 W → Medium  <br> 
+mux        : Power =  2.22 W → High<br> 
+register   : Power =  1.01 W → Medium<br> 
+memory     : Power =  0.17 W → Low<br> 
 
 # 5.Voltage source names
 set lines [list VDD1 VDD2 VDD3 VDD4 VDD5]
@@ -159,10 +159,10 @@ Output:
 Voltage Monitor Report
 ------------------------
 VDD1  : 0.812 V → Under-voltage <br> 
-VDD2  : 1.153 V → Normal 
-VDD3  : 1.391 V → Over-voltage 
-VDD4  : 1.008 V → Normal 
-VDD5  : 0.743 V → Under-voltage 
+VDD2  : 1.153 V → Normal <br> 
+VDD3  : 1.391 V → Over-voltage <br> 
+VDD4  : 1.008 V → Normal <br> 
+VDD5  : 0.743 V → Under-voltage <br> 
 
 
 
