@@ -144,11 +144,11 @@ foreach line $lines {
 
 #### Decide status
     if {$voltage < 0.9} {
-        set status "Under-voltage ⚠️"
+        set status "Under-voltage"
     } elseif {$voltage <= 1.2} {
-        set status "Normal ✅"
+        set status "Normal"
     } else {
-        set status "Over-voltage 🔥"
+        set status "Over-voltage"
     }
 
 #### Print result
@@ -158,11 +158,11 @@ foreach line $lines {
 Output:
 Voltage Monitor Report
 ------------------------
-VDD1  : 0.812 V → Under-voltage ⚠️
-VDD2  : 1.153 V → Normal ✅
-VDD3  : 1.391 V → Over-voltage 🔥
-VDD4  : 1.008 V → Normal ✅
-VDD5  : 0.743 V → Under-voltage ⚠️
+VDD1  : 0.812 V → Under-voltage \n
+VDD2  : 1.153 V → Normal 
+VDD3  : 1.391 V → Over-voltage 
+VDD4  : 1.008 V → Normal 
+VDD5  : 0.743 V → Under-voltage 
 
 
 
