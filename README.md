@@ -64,6 +64,38 @@ foreach mod $mods {
 close $fp
 
 #### Print success msg
-puts "✅ Report saved as: $report_name"
+puts "Report saved as: $report_name"
+
+# 3.Module Area Summary (TCL only, tool-style)
+
+## This script:
+### Loops through modules,assigns fake area values,prints a clean area report.
+
+#### List of modules (block names)
+set modules [list alu decoder mux register memory]
+
+#### Assign random area values to each module (between 500 and 3000 units)
+puts "Module Area Report"
+puts "-------------------"
+
+foreach mod $modules {
+    set area [expr int(rand() * 2500 + 500)]  ;
+#### random int between 500–3000
+#### Categorize by area size
+    if {$area > 2500} {
+        set tag "XL"
+    } elseif {$area > 1500} {
+        set tag "L"
+    } elseif {$area > 1000} {
+        set tag "M"
+    } else {
+        set tag "S"
+    }
+
+#### Print result
+    puts [format "%-10s : Area = %4d units → Size: %s" $mod $area $tag]
+}
+
+
 
 
