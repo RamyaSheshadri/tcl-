@@ -50,6 +50,12 @@ puts "Timing report generated!"
 
 # 2.Renaming report files with timestamps
 Imagine you're running a flow, and every time you generate a new report, you want it to be saved with the current date/time so it doesn't overwrite the old one.
+### Importance of This Script
+* Prevents overwriting old reports 🧾
+* Automatically saves each run with a unique timestamp
+* Helps track design progress across multiple runs
+* Useful in debugging and comparisons (“what changed since last run?”)
+* Makes log management clean and professional
 
 💻 TCL Script: Auto-Rename Report with Timestamp
 #### Get current time as YYYYMMDD_HHMM
