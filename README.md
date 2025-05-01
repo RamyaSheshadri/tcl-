@@ -103,6 +103,23 @@ puts "Report saved as: $report_name"
 
 ## This script:
 ### Loops through modules,assigns fake area values,prints a clean area report.
+### Importance:
+In real VLSI design workflows, every module (e.g., ALU, mux, register, memory controller) consumes a certain **physical area** on the chip.  
+Before physical design (floorplanning), engineers need an **area estimate** to:
+- Plan chip layout
+- Allocate space to each module
+- Check which blocks are area-heavy (like XL)
+- Optimize large modules to reduce die size and cost
+
+This script gives a **quick simulation** of that behavior — helpful for **project summaries, floorplanning, and mock tool outputs**.
+
+### 🛠️ Where It’s Used:
+- **Synthesis Output Review** – to assess area usage after RTL synthesis  
+- **Floorplanning Preparation** – to classify modules based on size  
+- **RTL Optimization** – identify area-heavy blocks that need rework  
+- **Automation Flows** – build quick logs before real tool run
+
+---
 
 #### List of modules (block names)
 set modules [list alu decoder mux register memory]
