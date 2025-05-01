@@ -57,6 +57,13 @@ Imagine you're running a flow, and every time you generate a new report, you wan
 * Useful in debugging and comparisons (“what changed since last run?”)
 * Makes log management clean and professional
 
+### Where is it used?
+-In regression testing, where designs are simulated or analyzed repeatedly, each report is saved with a unique timestamp to track what changed in each run.
+-It’s also essential for log management, helping engineers keep a clean history of reports, debug issues, and compare outputs between different tool versions or synthesis iterations.
+-Finally, during signoff and debugging, timestamped reports help verify that no timing or power regressions occurred across runs — making it easier to spot where things broke.
+
+
+
 💻 TCL Script: Auto-Rename Report with Timestamp
 #### Get current time as YYYYMMDD_HHMM
 set time_stamp [clock format [clock seconds] -format "%Y%m%d_%H%M"]
