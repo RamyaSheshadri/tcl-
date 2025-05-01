@@ -58,9 +58,9 @@ Imagine you're running a flow, and every time you generate a new report, you wan
 * Makes log management clean and professional
 
 ### Where is it used?
--In regression testing, where designs are simulated or analyzed repeatedly, each report is saved with a unique timestamp to track what changed in each run.
--It’s also essential for log management, helping engineers keep a clean history of reports, debug issues, and compare outputs between different tool versions or synthesis iterations.
--Finally, during signoff and debugging, timestamped reports help verify that no timing or power regressions occurred across runs — making it easier to spot where things broke.
+- In regression testing, where designs are simulated or analyzed repeatedly, each report is saved with a unique timestamp to track what changed in each run.
+- It’s also essential for log management, helping engineers keep a clean history of reports, debug issues, and compare outputs between different tool versions or synthesis iterations.
+- Finally, during signoff and debugging, timestamped reports help verify that no timing or power regressions occurred across runs — making it easier to spot where things broke.
 
 
 
