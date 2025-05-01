@@ -218,22 +218,22 @@ ii.In the VLSI flow, you don’t just write Verilog and simulate it.<br>
 “Connect this constraint to this port.”<br>
 This is done using an SDC file (Synopsys Design Constraints).<br>
 
-💥So this script is used when:
+#### So this script is used when:
 You have many clocks (10+ clk ports)
 You don’t want to write create_clock lines manually <br>
 You want to avoid typos or inconsistent period values<br>
 You’re working in a team and need repeatable constraints across runs<br>
 
-Real Industry Scenario:
+#### Real Industry Scenario:
 Imagine you’re in a company and your chip has:
 clk_sys, clk_usb, clk_audio, clk_uart, clk_camera<br>
 
-Instead of writing:<br>
+#### Instead of writing:<br>
 create_clock -name clk_sys -period 10 [get_ports clk_sys]<br>
 create_clock -name clk_usb -period 10 [get_ports clk_usb]<br>
 ...
 
-You use:
+#### You use:
 set clks [list clk_sys clk_usb clk_audio clk_uart clk_camera]<br>
 foreach clk $clks {<br>
     puts "create_clock -name $clk -period 10 [get_ports $clk]"<br>
