@@ -16,9 +16,9 @@
 ### How it Would Be Used in a Team Setting
 * Let’s say a team is testing 10 IP blocks (e.g., UART, ALU, memory controller).
 After STA is run, this script could:<br>
-Pull the slack data (or use dummy values like here) <br>
-Generate a clean summary (timing_report.txt)<br>
-Let engineers know if any block is unsafe to tape-out<br>
+- Pull the slack data (or use dummy values like here) <br>
+- Generate a clean summary (timing_report.txt)<br>
+- Let engineers know if any block is unsafe to tape-out<br>
 
 ### Script:
 set modules [list alu control datapath uart]
