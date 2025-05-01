@@ -8,6 +8,19 @@
 
 # 1.A mini script to simulate checking timing for multiple modules
 
+## WHY THIS SCRIPT IS IMPORTANT
+* Mimics real PrimeTime behavior: Generates human-readable reports
+* Saves time: Instead of manually opening huge .rpt files, this gives quick results
+* Customizable: Can plug into more advanced flows — e.g., calculate slack %, add colored logs, send alerts
+
+### How it Would Be Used in a Team Setting
+* Let’s say a team is testing 10 IP blocks (e.g., UART, ALU, memory controller).
+After STA is run, this script could:<br>
+Pull the slack data (or use dummy values like here) <br>
+Generate a clean summary (timing_report.txt)<br>
+Let engineers know if any block is unsafe to tape-out<br>
+
+### Script:
 set modules [list alu control datapath uart]
 
 ### Simulate some fake slack values
