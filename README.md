@@ -158,7 +158,7 @@ foreach line $lines {
 Output:
 Voltage Monitor Report
 ------------------------
-VDD1  : 0.812 V → Under-voltage \n
+VDD1  : 0.812 V → Under-voltage   return 
 VDD2  : 1.153 V → Normal 
 VDD3  : 1.391 V → Over-voltage 
 VDD4  : 1.008 V → Normal 
