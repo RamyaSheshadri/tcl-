@@ -188,13 +188,21 @@ foreach mod $modules {
 #### Sample Output:
 #### Module Power Report
 --------------------
-alu        : Power =  0.42 W → Low  <br> 
-decoder    : Power =  1.36 W → Medium  <br> 
-mux        : Power =  2.22 W → High<br> 
-register   : Power =  1.01 W → Medium<br> 
-memory     : Power =  0.17 W → Low<br> 
+**alu**        : Power =  0.42 W → Low  <br> 
+**decoder**    : Power =  1.36 W → Medium  <br> 
+**mux**        : Power =  2.22 W → High<br> 
+**register**   : Power =  1.01 W → Medium<br> 
+**memory**     : Power =  0.17 W → Low<br> 
 
 # 5.Voltage source names
+This script is designed to simulate the voltage levels for different voltage sources. It checks the voltage for each source, categorizes it as "Under-voltage," "Normal," or "Over-voltage," and generates a formatted report.
+
+**Purpose & Importance**
+* **Simulating Voltage Levels:** Engineers can simulate voltage levels for different voltage sources in their design.
+* **Voltage Monitoring:** Helps in assessing whether the voltage for different sources is within the desired range, which is critical for system stability.
+* **Power Systems:** Essential for designs where multiple voltage rails are monitored and managed to ensure proper functioning of components.
+
+### Script:
 set lines [list VDD1 VDD2 VDD3 VDD4 VDD5]
 
 puts "Voltage Monitor Report"
