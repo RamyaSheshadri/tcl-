@@ -285,35 +285,34 @@ create_clock -name clk2 -period 10 [get_ports clk2]
 
 
 ### 🎯 WHY IS THIS USED? <br>
-i.This script auto-generates clock constraints for all clock ports.<br>
-ii.In the VLSI flow, you don’t just write Verilog and simulate it.<br>
- You also need to tell the tools:<br>
-“Hey, this port is a clock.”<br>
-“Its period is 10 ns.”<br>
-“Connect this constraint to this port.”<br>
-This is done using an SDC file (Synopsys Design Constraints).<br>
+* This script auto-generates clock constraints for all clock ports.
+* In the VLSI flow, you don’t just write Verilog and simulate it.
+* You also need to tell the tools:
+   * “Hey, this port is a clock.”
+   * “Its period is 10 ns.”
+   * “Connect this constraint to this port.”
+*This is done using an SDC file (Synopsys Design Constraints).<br>
 
 #### So this script is used when:
-You have many clocks (10+ clk ports)
-You don’t want to write create_clock lines manually <br>
-You want to avoid typos or inconsistent period values<br>
-You’re working in a team and need repeatable constraints across runs<br>
+*You have many clocks (10+ clk ports)
+*You don’t want to write create_clock lines manually 
+*You want to avoid typos or inconsistent period values
+*You’re working in a team and need repeatable constraints across runs
 
 #### Real Industry Scenario:
-Imagine you’re in a company and your chip has:
-clk_sys, clk_usb, clk_audio, clk_uart, clk_camera<br>
+*Imagine you’re in a company and your chip has:
+clk_sys, clk_usb, clk_audio, clk_uart, clk_camera
 
 #### Instead of writing:<br>
-create_clock -name clk_sys -period 10 [get_ports clk_sys]<br>
-create_clock -name clk_usb -period 10 [get_ports clk_usb]<br>
-...
+create_clock -name clk_sys -period 10 [get_ports clk_sys]
+create_clock -name clk_usb -period 10 [get_ports clk_usb]
 
 #### You use:
 set clks [list clk_sys clk_usb clk_audio clk_uart clk_camera]<br>
 foreach clk $clks {<br>
     puts "create_clock -name $clk -period 10 [get_ports $clk]"<br>
 }
-💥 BOOM — all 5 lines generated in 1 loop!
+* Here,all 5 lines generated in 1 loop!
 
 
 
