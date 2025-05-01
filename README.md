@@ -226,17 +226,17 @@ You’re working in a team and need repeatable constraints across runs<br>
 
 Real Industry Scenario:
 Imagine you’re in a company and your chip has:
-clk_sys, clk_usb, clk_audio, clk_uart, clk_camera
+clk_sys, clk_usb, clk_audio, clk_uart, clk_camera<br>
 
-Instead of writing:
-create_clock -name clk_sys -period 10 [get_ports clk_sys]
-create_clock -name clk_usb -period 10 [get_ports clk_usb]
+Instead of writing:<br>
+create_clock -name clk_sys -period 10 [get_ports clk_sys]<br>
+create_clock -name clk_usb -period 10 [get_ports clk_usb]<br>
 ...
 
 You use:
-set clks [list clk_sys clk_usb clk_audio clk_uart clk_camera]
-foreach clk $clks {
-    puts "create_clock -name $clk -period 10 [get_ports $clk]"
+set clks [list clk_sys clk_usb clk_audio clk_uart clk_camera]<br>
+foreach clk $clks {<br>
+    puts "create_clock -name $clk -period 10 [get_ports $clk]"<br>
 }
 💥 BOOM — all 5 lines generated in 1 loop!
 
