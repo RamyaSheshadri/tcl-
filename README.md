@@ -167,7 +167,7 @@ VDD5  : 0.743 V → Under-voltage <br>
 
 # 6.Log Parser Script
 ## GOAL:
-Read a .rpt file, look for specific words (like “VIOLATED”) and print those lines.
+Read a .rpt file, look for specific words (like “VIOLATED”) and print those lines. <br>
 💻 Script:
 #### Sets the filename to a variable
 set log "timing_report.txt" 
@@ -191,6 +191,54 @@ foreach line $lines {
  #### Loops through each line
  If the line contains the word “VIOLATED” → print it!
 #### Used in: PrimeTime, DC, Questa logs
+
+# 7.Constraint Generator Script (SDC)
+
+## GOAL:
+Auto-generate clock constraints for multiple ports. <br>
+💻 Script:
+#### List of all clock ports in your design
+set clk_ports [list clk1 clk2]
+foreach clk $clk_ports {
+    puts "create_clock -name $clk -period 10 [get_ports $clk]"
+}
+#### For each clock:Create a command that tools like PrimeTime use
+#### Generates this:
+create_clock -name clk1 -period 10 [get_ports clk1]
+create_clock -name clk2 -period 10 [get_ports clk2]
+#### Used to automate writing .sdc files in STA/Synthesis
+
+
+### 🎯 WHY IS THIS USED? <br>
+i.This script auto-generates clock constraints for all clock ports.<br>
+ii.In the VLSI flow, you don’t just write Verilog and simulate it.<br>
+ You also need to tell the tools:<br>
+“Hey, this port is a clock.”<br>
+“Its period is 10 ns.”<br>
+“Connect this constraint to this port.”<br>
+This is done using an SDC file (Synopsys Design Constraints).<br>
+
+💥So this script is used when:
+You have many clocks (10+ clk ports)
+You don’t want to write create_clock lines manually <br>
+You want to avoid typos or inconsistent period values<br>
+You’re working in a team and need repeatable constraints across runs<br>
+
+Real Industry Scenario:
+Imagine you’re in a company and your chip has:
+clk_sys, clk_usb, clk_audio, clk_uart, clk_camera
+
+Instead of writing:
+create_clock -name clk_sys -period 10 [get_ports clk_sys]
+create_clock -name clk_usb -period 10 [get_ports clk_usb]
+...
+
+You use:
+set clks [list clk_sys clk_usb clk_audio clk_uart clk_camera]
+foreach clk $clks {
+    puts "create_clock -name $clk -period 10 [get_ports $clk]"
+}
+💥 BOOM — all 5 lines generated in 1 loop!
 
 
 
