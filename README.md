@@ -32,9 +32,9 @@ puts $fp "Timing Report"
 puts $fp "--------------"
 
 ### Loop through modules and write timing info
-for {set i 0} {$i < [llength $modules]} {incr i} {
-    set mod [lindex $modules $i]
-    set slack [lindex $slack_values $i]
+for {set i 0} {$i < [llength $modules]} {incr i} { <br>
+    set mod [lindex $modules $i]  <br>
+    set slack [lindex $slack_values $i]  <br>
     
     if {[expr $slack < 0]} {
         set status "VIOLATED"
