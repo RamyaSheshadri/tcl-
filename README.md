@@ -1,4 +1,4 @@
-# tcl-
+# Basic Tool Command Language Scripts:
 This repository contains a curated set of TCL scripts written to simulate common tasks in VLSI design automation, inspired by real tool flows like Synopsys PrimeTime and Design Compiler.<br>
 Scripts automate processes like slack analysis, area/power reporting, batch simulations, clock constraint generation, and more — all with beginner-friendly, readable TCL logic.<br>
 Ideal for EDA beginners, STA learners, and anyone looking to get hands-on with scripting in a VLSI context.<br>
