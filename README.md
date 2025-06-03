@@ -99,6 +99,11 @@ close $fp
 #### Print result
 puts "Report saved as: $report_name"
 
+### This can be run using WSL(Windows Subsystem for Linux)
+<img width="535" alt="Screenshot 2025-06-03 090848" src="https://github.com/user-attachments/assets/ab726303-9c46-4a1f-929f-5b1f66158fe7" />
+<img width="429" alt="Screenshot 2025-06-03 090910" src="https://github.com/user-attachments/assets/8053d9f4-f0ad-45d5-a17e-2864c35f5b74" />
+
+
 # 3.Module Area Summary (TCL only, tool-style)
 
 ## This script:
