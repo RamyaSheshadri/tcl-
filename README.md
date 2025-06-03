@@ -100,6 +100,9 @@ close $fp
 puts "Report saved as: $report_name"
 
 ### This can be run using WSL(Windows Subsystem for Linux)
+* type the code in notepad, save as .tcl extension
+* in ubuntu terminal cd to where the file is saved, run it using the command "tclsh myscript.tcl"
+* generates a timing report as shown:
 <img width="535" alt="Screenshot 2025-06-03 090848" src="https://github.com/user-attachments/assets/ab726303-9c46-4a1f-929f-5b1f66158fe7" />
 <img width="429" alt="Screenshot 2025-06-03 090910" src="https://github.com/user-attachments/assets/8053d9f4-f0ad-45d5-a17e-2864c35f5b74" />
 
