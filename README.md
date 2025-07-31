@@ -72,25 +72,33 @@ Imagine you're running a flow, and every time you generate a new report, you wan
 
 💻 TCL Script: Auto-Rename Report with Timestamp
 #### Get current time as YYYYMMDD_HHMM
+```
 set time_stamp [clock format [clock seconds] -format "%Y%m%d_%H%M"]
-
+```
 #### Create a report name using the timestamp
+```
 set report_name "timing_report_$time_stamp.txt"
-
+```
 #### Open the file for writing
+```
 set fp [open $report_name "w"]
-
+```
 #### Sample content
+```
 puts $fp "Timing Report Generated on: $time_stamp"
 puts $fp "-----------------------------------"
-
+```
 #### Dummy module list
+```
 set mods [list alu fifo uart]
-
+```
 #### Write dummy slack values
+```
 foreach mod $mods {
     set slack [expr rand() * 0.3 - 0.1]  ;
+```
 #### Random slack between -0.1 and +0.2
+```
     if {[expr $slack < 0]} {
         set status "VIOLATED"
     } else {
@@ -98,20 +106,21 @@ foreach mod $mods {
     }
     puts $fp [format "%-8s : Slack = %5.2f ns → %s" $mod $slack $status]
 }
-
+```
 #### Close the file
+```
 close $fp
-
+```
 #### Print result
+```
 puts "Report saved as: $report_name"
-
+```
 ### This can be run using WSL(Windows Subsystem for Linux)
 * type the code in notepad, save as .tcl extension
 * in ubuntu terminal cd to where the file is saved, run it using the command "tclsh myscript.tcl"
 * generates a timing report as shown:
 <img width="535" alt="Screenshot 2025-06-03 090848" src="https://github.com/user-attachments/assets/ab726303-9c46-4a1f-929f-5b1f66158fe7" />
 <img width="429" alt="Screenshot 2025-06-03 090910" src="https://github.com/user-attachments/assets/8053d9f4-f0ad-45d5-a17e-2864c35f5b74" />
-
 
 # 3.Module Area Summary (TCL only, tool-style)
 
@@ -136,9 +145,11 @@ This script gives a **quick simulation** of that behavior — helpful for **proj
 ---
 
 #### List of modules (block names)
+```
 set modules [list alu decoder mux register memory]
-
+```
 #### Assign random area values to each module (between 500 and 3000 units)
+```
 puts "Module Area Report"
 puts "-------------------"
 
@@ -155,11 +166,12 @@ foreach mod $modules {
     } else {
         set tag "S"
     }
-
+```
 #### Print result
+```
     puts [format "%-10s : Area = %4d units → Size: %s" $mod $area $tag]
 }
-
+```
 # 4.Power Report Generator
 This script designed to simulate and generate power consumption reports for various system modules. 
 The script is useful for system designers, embedded engineers, and hardware architects to assess and categorize the power usage of different components in a system design.
