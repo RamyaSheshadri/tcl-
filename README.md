@@ -21,17 +21,23 @@ After STA is run, this script could:<br>
   - Let engineers know if any block is unsafe to tape-out<br>
 
 ### Script:
+
+```
 set modules [list alu control datapath uart]
+```
 
 ### Simulate some fake slack values
+````
 set slack_values [list 0.25 -0.12 0.05 0.00]
-
+````
 ### Create a report file
+```
 set fp [open "timing_report.txt" "w"]
 puts $fp "Timing Report"
 puts $fp "--------------"
-
+````
 ### Loop through modules and write timing info
+```
 for {set i 0} {$i < [llength $modules]} {incr i} { <br>
     set mod [lindex $modules $i]  <br>
     set slack [lindex $slack_values $i]  <br>
@@ -47,7 +53,7 @@ for {set i 0} {$i < [llength $modules]} {incr i} { <br>
 
 close $fp
 puts "Timing report generated!"
-
+```
 # 2.Renaming report files with timestamps
 Imagine you're running a flow, and every time you generate a new report, you want it to be saved with the current date/time so it doesn't overwrite the old one.
 ### Importance of This Script
