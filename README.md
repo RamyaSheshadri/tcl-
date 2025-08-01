@@ -214,13 +214,13 @@ puts [format "%-10s : Power = %4.2f W → %s" $mod $power $level]
 ```
 #### Sample Output:
 #### Module Power Report
-```
+
 **alu**        : Power =  0.42 W → Low  <br> 
 **decoder**    : Power =  1.36 W → Medium  <br> 
 **mux**        : Power =  2.22 W → High<br> 
 **register**   : Power =  1.01 W → Medium<br> 
 **memory**     : Power =  0.17 W → Low<br> 
-```
+
 # 5.Voltage source names
 This script is designed to simulate the voltage levels for different voltage sources. It checks the voltage for each source, categorizes it as "Under-voltage," "Normal," or "Over-voltage," and generates a formatted report.
 
