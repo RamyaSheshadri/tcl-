@@ -209,7 +209,8 @@ puts "--------------------"
     }
 ```
 #### Print formatted result
-   ``` puts [format "%-10s : Power = %4.2f W → %s" $mod $power $level]
+```
+puts [format "%-10s : Power = %4.2f W → %s" $mod $power $level]
 ```
 #### Sample Output:
 #### Module Power Report
