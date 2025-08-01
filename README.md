@@ -325,13 +325,13 @@ create_clock -name clk2 -period 10 [get_ports clk2]
 *This is done using an SDC file (Synopsys Design Constraints).<br>
 
 #### So this script is used when:
-*You have many clocks (10+ clk ports)
-*You don’t want to write create_clock lines manually 
-*You want to avoid typos or inconsistent period values
-*You’re working in a team and need repeatable constraints across runs
+* You have many clocks (10+ clk ports)
+* You don’t want to write create_clock lines manually 
+* You want to avoid typos or inconsistent period values
+* You’re working in a team and need repeatable constraints across runs
 
 #### Real Industry Scenario:
-*Imagine you’re in a company and your chip has:
+- Imagine you’re in a company and your chip has:
 clk_sys, clk_usb, clk_audio, clk_uart, clk_camera
 
 #### Instead of writing:<br>
@@ -346,7 +346,7 @@ foreach clk $clks {<br>
     puts "create_clock -name $clk -period 10 [get_ports $clk]"<br>
 }
 ```
-* Here,all 5 lines generated in 1 loop!
+- Here,all 5 lines generated in 1 loop!
 
 
 
